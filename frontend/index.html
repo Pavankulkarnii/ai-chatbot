@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - ChatGPT Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>🤖 AI Chatbot</h1>
+                <span class="model-badge">DialoGPT-medium</span>
+            </div>
+            <div class="controls">
+                <button class="btn" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="btn" id="resetBtn">
+                    <span>🔄 New Chat</span>
+                </button>
+                <button class="btn" id="settingsBtn">
+                    <span>⚙️ Settings</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+            <!-- Welcome message -->
+            <div class="welcome-section">
+                <div class="welcome-icon">💬</div>
+                <h2>Welcome to AI Chatbot</h2>
+                <p>Start a conversation below. I'm powered by DialoGPT and running on your MacBook Air M4!</p>
+                <div class="example-prompts">
+                    <p class="prompts-title">Try asking:</p>
+                    <button class="example-btn" data-message="Tell me a fun fact about artificial intelligence">Tell me a fun fact about AI</button>
+                    <button class="example-btn" data-message="What's the weather like today?">What's the weather like?</button>
+                    <button class="example-btn" data-message="Can you help me write a poem?">Write me a poem</button>
+                    <button class="example-btn" data-message="Explain machine learning in simple terms">Explain machine learning</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+            <div class="message bot-message">
+                <div class="avatar bot-avatar">🤖</div>
+                <div class="message-content">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Container -->
+        <div class="input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Type your message here..." 
+                    rows="1"
+                    maxlength="500"
+                ></textarea>
+                <button class="send-btn" id="sendBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-info">
+                <span class="char-count"><span id="charCount">0</span>/500</span>
+                <span class="connection-status" id="connectionStatus">● Connected</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>⚙️ Settings</h3>
+                <button class="close-btn" id="closeSettings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label for="temperature">
+                        Temperature: <span id="tempValue">0.7</span>
+                        <span class="tooltip">Higher = more creative, Lower = more focused</span>
+                    </label>
+                    <input type="range" id="temperature" min="0.1" max="1.0" step="0.1" value="0.7">
+                </div>
+                <div class="setting-group">
+                    <label for="maxLength">
+                        Max Response Length: <span id="lengthValue">1000</span>
+                    </label>
+                    <input type="range" id="maxLength" min="100" max="2000" step="100" value="1000">
+                </div>
+                <div class="setting-group">
+                    <label>
+                        <input type="checkbox" id="useWebSocket" checked>
+                        Use WebSocket (Real-time)
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

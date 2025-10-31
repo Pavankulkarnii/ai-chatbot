@@ -1,0 +1,31 @@
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+websockets==12.0
+
+# Deep Learning (Apple Silicon Optimized)
+torch==2.1.2
+torchvision==0.16.2
+torchaudio==2.1.2
+transformers==4.36.2
+accelerate==0.25.0
+sentencepiece==0.1.99
+
+# Model optimization
+optimum==1.16.1
+
+# Database (Optional)
+sqlalchemy==2.0.23
+aiosqlite==0.19.0
+
+# Utilities
+python-dotenv==1.0.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+python-jose==3.3.0
+passlib==1.7.4
+httpx==0.25.2
+
+
+
